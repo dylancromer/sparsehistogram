@@ -7,7 +7,7 @@ points = import_csv_nonp('testpoints.csv')
 points = [[float(coord) for coord in point] for point in points]
 chk1 = time.time()
 print('Import time: ' + str(chk1 - start))
-res = 1
+res = 0.01
 nbins = np.ceil(10/res)
 
 def binindex(point):
