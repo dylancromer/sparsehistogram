@@ -32,3 +32,16 @@ def import_dat(filename):
     del str_gals
     return gals
 
+def import_csv_nonp(filename):
+    infile = open(filename,'r')
+    str_gals_transpose = []
+    for i,line in enumerate(infile):
+        try:
+            if line[0] != '#':
+                line = line.rstrip()
+                str_gals_transpose.append(line.split(','))
+        except:
+            pass
+    infile.close()
+    gals = str_gals_transpose
+    return gals
