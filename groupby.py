@@ -2,8 +2,9 @@ import numpy as np
 from importgals import import_csv_nonp
 
 
-gals  = import_csv_nonp('testpoints.csv')
-gals = [[float(coord) for coord in gal] for gal in gals]
+if __name__ == "__main__":
+    gals  = import_csv_nonp('testpoints.csv')
+    gals = [[float(coord) for coord in gal] for gal in gals]
 
 def groupbybin(points, res, weights=True):
     nbins = np.ceil(10/res)
