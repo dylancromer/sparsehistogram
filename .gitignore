@@ -1,0 +1,10 @@
+*.csv
+*.dat
+*.pkl
+*.bz2
+*.fits
+.DS_Store
+*.swp
+*.csv.*
+*__pycache__*
+*__pycache__/*
