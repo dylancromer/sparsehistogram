@@ -3,7 +3,7 @@ from collections import defaultdict
 """Accepts a python list of 3D spatial points, e.g. [[x1,y1,z1],...], optionally with weights e.g. [[x1,x2,x3,w1],...], and returns the sparse histogram (i.e. no empty bins) with bins of resolution (spacing) given by res.
 The weights option allows you to chose to histogram over counts instead of weights (equivalent to all weights being 1).
 The bin_index option lets you return the points with their bin indices (the integers representing how many bins in each direction to walk to find the specified bin) rather than centerpoint coordinates."""
-def sparse_hist(points, res, weights=True, bin_index=True):
+def sparse_hist(points, res, weights=True, bin_index=False):
     def _binindex(point):
         point = point[:3]
         bi = [int(x//res) for x in point]
