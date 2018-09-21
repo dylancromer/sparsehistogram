@@ -1,8 +1,7 @@
-# python_groupby
-Testing ground for Python 3 code attempting to perform a certain groupby-esque operation on lists of coordinates and weights
+# python-sparsehistogram
+A short python 3 function which computes the sparse (no empty bins) histogram of a 3D dataset (weights optional)
 
 ## Description
+This script offers a function which quickly computes the histogram of a dataset stored as a python list, in sparse form. That is, no empty bins are represented; only bins with nonzero count or weight are stored. The function is written for 3D points with optional weights, but is trivially adapted to any dimension. 
 
-`groupbybin` is a function which, provided with an ordered list of coordinates {(x,y,z,w)}, with w a weight, bins the data according to x,y,z position and adds the weights w belonging to the same bin. Thus, `groupbybin` is a map from {(x,y,z,w)} to a function mapping {(xbin,ybin,zbin}) -> {w}. 
-
-The implementation is styled so that the function is ready to accept Python 3 lists of the form [[x1,y1,z1,w1],...]. However, with little modification this function is adaptable to other inputs.
+It has been tested on 3D weighted and unweighted datasets. It is roughly as fast as using numpy's histogram function on a numpy array, but has the advantage that for fine resolutions and large datasets (order 10^6-10^7 points), it doesn't have horrible memory scaling. Numpy histograms will scale as the number of bins (which is the number of bins in each dimension to the power of the dimension, e.g. for 3D, n_bins^3), whereas sparsehist scales linearly with the size of the dataset in memory usage.
