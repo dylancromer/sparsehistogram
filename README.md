@@ -1,4 +1,4 @@
-# python-sparsehistogram
+# sparsehistogram
 A short python 3 function which computes the sparse (no empty bins) histogram of a 3D dataset (weights optional)
 
 ## Description
